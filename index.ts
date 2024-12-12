@@ -38,23 +38,26 @@ app.use((req, res, next) => {
 //-----------------------------
 //#region Database Routes
 //-----------------------------
-app.get("/", (req, res) => {
-  res.json({ info: "Demo app for sqlite3" });
-});
+//app.get("/", (req, res) => {
+  //res.json({ info: "Demo app for sqlite3" });
+//});
 
 // This endpoint allows a client to get a single user by id
-app.get("/user/:id", db.getUserById);
+//app.get("/user/:id", db.getUserById);
 
 // ------ FILL IN BELOW -------
 // Write endpoints that allow a client to:
-
 // Get all users
+app.get("/user", db.getAllUsers);
 
 // Create a new user
+app.post("/user", db.createUser);
 
 // Update a user's name, given an id
+app.put("/user/:id", db.updateUser);
 
 // Delete a user by id
+app.delete("/user/:id", db.deleteUser);
 
 //#endregion Database Routes
 
